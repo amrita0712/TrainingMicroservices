@@ -1,0 +1,8 @@
+com\example\SubscriptionService\service\SubscriptionService.class
+com\example\SubscriptionService\entity\Book.class
+com\example\SubscriptionService\feign\BookRestConsumer.class
+com\example\SubscriptionService\SubscriptionServiceApplication.class
+com\example\SubscriptionService\repository\SubscriptionRepository.class
+com\example\SubscriptionService\entity\Subscription.class
+com\example\SubscriptionService\service\SubscriptionServiceImpl.class
+com\example\SubscriptionService\controller\SubscriptionController.class

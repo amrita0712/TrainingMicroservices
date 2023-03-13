@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: service-registry
+
+logging:
+  file:
+    name: C:\Users\e5659135\Downloads\CaseStudy\service-registry\log\logdetails.log
+
+
+server:
+   port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    

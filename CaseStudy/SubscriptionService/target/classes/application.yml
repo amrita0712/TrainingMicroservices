@@ -1,0 +1,48 @@
+server:
+  port: 9001
+  
+logging:
+  file:
+    name: C:\Users\e5659135\Downloads\CaseStudy\SubscriptionService\log\logdetails.log
+
+spring:
+  application:
+    name: SubscriptionService
+ 
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url=jdbc:mysql: jdbc:mysql://localhost:3306/casestudy
+    username: root
+    password: password
+
+ # Eureka server details
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+      
+      
+ # Resiliece4j Configuration
+resilience4j.circuitbreaker:
+    configs:
+        shared:
+            slidingWindowType: COUNT_BASED
+            registerHealthIndicator: true
+            slidingWindowSize: 10
+            minimumNumberOfCalls: 3
+            permittedNumberOfCallsInHalfOpenState: 3
+            automaticTransitionFromOpenToHalfOpenEnabled: true
+            waitDurationInOpenState: 10s
+            slowCallDurationThreshold: 2s
+            slowCallRateThreshold: 40
+            failureRateThreshold: 40
+            
+    instances:
+      contactService:
+        baseConfig: shared
+      
